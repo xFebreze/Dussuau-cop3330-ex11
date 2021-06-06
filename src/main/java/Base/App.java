@@ -1,4 +1,7 @@
 package Base;
+
+import java.util.Scanner;
+
 /*
 UCF COP3330 Summer 2021 Assignment 1 Solution
 Copyright 2021 Alek Dussuau
@@ -34,6 +37,23 @@ Wire up your application to an external API that provides the current exchange r
  */
 public class App {
     public static void main(String[] args){
-        
+        Scanner input = new Scanner(System.in);
+
+        //inputs
+        System.out.print("How many Euros are you exchanging? ");
+        String Euros_buff = input.nextLine();
+        System.out.print("What is the exchange rate? ");
+        String Exchange_buff = input.nextLine();
+
+        //parsing
+        double Euros = Double.parseDouble(Euros_buff);
+        double Exchange = Double.parseDouble(Exchange_buff);
+
+        //math
+        double USD = Euros * Exchange;
+
+        //outputs
+        System.out.printf("%.2f euros at an exchange rate of %.4f is\n%.2f U.S. dollars",
+                            Euros,Exchange,USD);
     }
 }
